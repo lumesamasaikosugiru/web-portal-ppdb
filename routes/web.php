@@ -1,10 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\BiodataController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('main');
-});
-Route::get('/daftar', function () {
-    return view('daftar');
-})->name('daftar');
+Route::get('/biodata', [BiodataController::class, 'index']);
+
