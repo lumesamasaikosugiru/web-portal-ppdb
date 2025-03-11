@@ -28,7 +28,7 @@
     <a href="#" class="brand-link">
         <img src="{{ asset('imgs/logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-2"
             style="opacity: 1">
-        <span class="brand-text font-weight-light rounded shadow-sm "><b>WEB APP PPDB</b></span>
+        <span class="brand-text font-weight-bold rounded shadow-sm "><b>PPDB WEB APP</b></span>
     </a>
 
     <!-- Sidebar -->

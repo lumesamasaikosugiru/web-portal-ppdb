@@ -16,5 +16,36 @@
 
 
 @section('content')
-
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>CALON SISWA</th>
+                                <th>NIK</th>
+                                <th>USIA</th>
+                                <th>JK</th>
+                                <th>DIBUAT</th>
+                                <th>AKSI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Bagus Pribadi</td>
+                                <td>2777777777777777</td>
+                                <td>27</td>
+                                <td>L</td>
+                                <td>11 Maret 2025</td>
+                                <td>aksi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
