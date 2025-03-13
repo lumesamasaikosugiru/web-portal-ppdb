@@ -19,29 +19,38 @@
     <div class="row">
         <div class="col">
             <div class="card">
+                <div class="card-header d-flex justify-content-end">
+                    <a href="/biodata/create" class="btn btn-primary btn-sm">
+                        Tambah Data
+                    </a>
+                </div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th>NO</th>
+                                <th>NISN</th>
                                 <th>CALON SISWA</th>
-                                <th>NIK</th>
+                                <th>TANGGAL LAHIR</th>
                                 <th>USIA</th>
                                 <th>JK</th>
-                                <th>DIBUAT</th>
+                                <th>ASAL SEKOLAH</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Bagus Pribadi</td>
-                                <td>2777777777777777</td>
-                                <td>27</td>
-                                <td>L</td>
-                                <td>11 Maret 2025</td>
-                                <td>aksi</td>
-                            </tr>
+                            @foreach ($biodatas as $biodata)
+                                <tr>
+                                    <td class="text-center">{{$loop->iteration}}</td>
+                                    <td class="text-center">{{$biodata->nisn}}</td>
+                                    <td>{{$biodata->name}}</td>
+                                    <td class="text-center">{{$biodata->tanggal_lahir}}</td>
+                                    <td class="text-center">{{$biodata->usia}} Tahun</td>
+                                    <td class="text-center">{{$biodata->jk}}</td>
+                                    <td class=>{{$biodata->sekolah_asal}}</td>
+                                    <td class="text-center">#</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

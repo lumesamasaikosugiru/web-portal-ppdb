@@ -21,7 +21,7 @@ class BiodataSeeder extends Seeder
             "tanggal_lahir" => "2010-03-09",
             "jk" => "L",
             "sekolah_asal" => "SDN R2-UNIVAL",
-            "id_user" => "2",
+            "id_user" => "4",
         ]);
     }
 }
