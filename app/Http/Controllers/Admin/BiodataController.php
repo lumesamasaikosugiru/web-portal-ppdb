@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Biodata;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class BiodataController extends Controller
 {
@@ -24,7 +26,11 @@ class BiodataController extends Controller
 
     public function create()
     {
-        return view('pages.biodata.create');
+        $orangtua = User::all();
+
+        return view('pages.biodata.create', [
+            "orangtua" => $orangtua,
+        ]);
     }
 
     public function store(Request $request)
@@ -37,6 +43,9 @@ class BiodataController extends Controller
             "tanggal_lahir" => $request->input('tgl_lhr'),
             "jk" => $request->input('jk'),
             "sekolah_asal" => $request->input('sekolah_asal'),
+            "id_user" => $request->input('id_user'),
+            // "id_user" => Auth::id(),
         ]);
+        return redirect('/biodata');
     }
 }

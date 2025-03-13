@@ -4,7 +4,7 @@
     <div class="row mb-2">
         <div class="col-sm-6">
             <h1>Tambah Biodata Calon Siswa</h1>
-            <h6 class="font-weight-light">Silakan lengkapi isian dibawah ini</h6>
+
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -19,7 +19,8 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <form action="biodata/store" method="POST">
+            <h6 class="font-semibold">Silakan lengkapi isian dibawah ini</h6>
+            <form action="/biodata/store" method="POST">
                 @csrf
                 @method('POST')
                 <div class="card">
@@ -71,9 +72,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="sekolah_asal" class="form-label">Asal Sekolah</label>
-                            <input type="text" name="sekolah_asal" id="sekolah_asal" class="form-control">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sekolah_asal" class="form-label">Asal Sekolah</label>
+                                    <input type="text" name="sekolah_asal" id="sekolah_asal" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="id_user" class="form-label">Id_User ini nanti diambil dari Orangtua yg
+                                        login, jadi sementara dulu isi.</label>
+                                    <select name="id_user" id="id_user" class="form-control">
+                                        @foreach ($orangtua as $orangtuaid)
+                                            <option value="{{$orangtuaid->id}}">{{$orangtuaid->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
