@@ -35,17 +35,50 @@ class BiodataController extends Controller
 
     public function store(Request $request)
     {
-        Biodata::create([
-            "nik_siswa" => $request->input('nik'),
-            "name" => $request->input('name'),
-            "nisn" => $request->input('nisn'),
-            "tempat_lahir" => $request->input('tmpt_lhr'),
-            "tanggal_lahir" => $request->input('tgl_lhr'),
-            "jk" => $request->input('jk'),
-            "sekolah_asal" => $request->input('sekolah_asal'),
-            "id_user" => $request->input('id_user'),
-            // "id_user" => Auth::id(),
+        $validated = $request->validate([
+            "nik_siswa" => "required|min:16",
+            "name" => "required|min:3",
+            "nisn" => "required|min:10",
+            "tempat_lahir" => "required|min:3",
+            "tanggal_lahir" => "required",
+            "jk" => "required",
+            "sekolah_asal" => "required|min:5",
+            "id_user" => "required",
         ]);
+        Biodata::create($validated);
+        return redirect('/biodata');
+    }
+    public function delete($id)
+    {
+        $del_biodata = Biodata::where('id', $id);
+        $del_biodata->delete();
+
+        return redirect('/biodata');
+    }
+    public function edit($id)
+    {
+        $orangtua = User::all();
+        $edit_biodata = Biodata::findOrFail($id);
+
+        return view('pages.biodata.edit', [
+            "orangtua" => $orangtua,
+            "edit_biodata" => $edit_biodata,
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            "nik_siswa" => "required|min:16",
+            "name" => "required|min:3",
+            "nisn" => "required|min:10",
+            "tempat_lahir" => "required|min:3",
+            "tanggal_lahir" => "required",
+            "jk" => "required",
+            "sekolah_asal" => "required|min:5",
+            "id_user" => "required",
+        ]);
+        Biodata::where('id', $id)->update($validated);
         return redirect('/biodata');
     }
 }

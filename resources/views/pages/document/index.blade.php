@@ -3,12 +3,12 @@
 @section('header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Biodata Calon Siswa</h1>
+            <h1>Berkas Calon Siswa</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-                <li class="breadcrumb-item active">Biodata</li>
+                <li class="breadcrumb-item active">Berkas</li>
             </ol>
         </div>
     </div>
@@ -20,7 +20,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header d-flex justify-content-end">
-                    <a href="/biodata/create" class="btn btn-primary btn-sm">
+                    <a href="/document/create" class="btn btn-primary btn-sm">
                         Tambah Data
                     </a>
                 </div>
@@ -29,31 +29,24 @@
                         <thead>
                             <tr class="text-center">
                                 <th>NO</th>
-                                <th>NISN</th>
-                                <th>CALON SISWA</th>
-                                <th>TANGGAL LAHIR</th>
-                                <th>USIA</th>
-                                <th>JK</th>
-                                <th>ASAL SEKOLAH</th>
-                                <th>AKSI</th>
+                                <th>NAMA</th>
+                                <th>URL</th>
+                                <th>ID BIODATA</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($biodatas as $biodata)
+                            @foreach ($document as $documents)
                                 <tr>
                                     <td class="text-center">{{$loop->iteration}}</td>
-                                    <td class="text-center">{{$biodata->nisn}}</td>
-                                    <td>{{$biodata->name}}</td>
-                                    <td class="text-center">{{$biodata->tanggal_lahir}}</td>
-                                    <td class="text-center">{{$biodata->usia}} Tahun</td>
-                                    <td class="text-center">{{$biodata->jk}}</td>
-                                    <td class=>{{$biodata->sekolah_asal}}</td>
+                                    <td class="text-center">{{$documents->name}}</td>
+                                    <td class="text-center">{{$documents->url_berkas}}</td>
+                                    <td class="text-center">{{$documents->id_biodata}}</td>
                                     <td>
                                         <div class="d-flex justify-content-center">
-                                            <a href="/biodata/edit/{{$biodata->id}}"
+                                            <a href="/document/edit/{{$documents->id}}"
                                                 class="btn btn-sm btn-primary mr-2">Edit</a>
                                             <a href="#" class="btn btn-sm btn-primary mr-2">Detail</a>
-                                            <form action="/biodata/{{$biodata->id}}" method="POST">
+                                            <form action="/document/{{$documents->id}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
