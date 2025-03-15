@@ -33,18 +33,20 @@ class DocumentController extends Controller
             "url_berkas.required" => "URL harus diisi!",
             "id_biodata.required" => "ID biodata harus diisi!",
         ]);
+
         $document = new Document();
         $document->name = $request->input('name');
-        $document->url_biodata = $request->input('url_biodata');
+        $document->url_berkas = $request->input('url_berkas'); // FIXED
         $document->id_biodata = $request->input('id_biodata');
         $document->save();
 
         return redirect('/document');
     }
+
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            "name" => "required|unique:documents,name",
+            "name" => "required|unique:documents,name,$id",
             "url_berkas" => "required",
             "id_biodata" => "required",
         ], [
@@ -53,20 +55,26 @@ class DocumentController extends Controller
             "url_berkas.required" => "URL harus diisi!",
             "id_biodata.required" => "ID biodata harus diisi!",
         ]);
-        $document = Document::find('$id');
+
+        $document = Document::find($id); // FIXED
+        if (!$document) {
+            return redirect('/document')->with('error', 'Dokumen tidak ditemukan!');
+        }
+
         $document->name = $request->input('name');
-        $document->url_biodata = $request->input('url_biodata');
+        $document->url_berkas = $request->input('url_berkas'); // FIXED
         $document->id_biodata = $request->input('id_biodata');
         $document->save();
 
-        return redirect('/document');
+        return redirect('/document')->with('success', 'Dokumen berhasil diperbarui!');
     }
+
 
     public function edit($id)
     {
         $edit_doc = Document::find($id);
 
-        return view('pages.document.edit', compact('$edit_doc'));
+        return view('pages.document.edit', compact('edit_doc'));
     }
 
     public function delete($id)

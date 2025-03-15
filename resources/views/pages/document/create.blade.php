@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="name" class="form-label">Nama Kategori</label>
+                                    <label for="name" class="form-label">Nama Berkas</label>
                                     <input type="text" name="name" id="name"
                                         class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}">
                                     @error('name')
@@ -49,20 +49,22 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group">
-                                <label for="id_biodata" class="form-label">ID Biodata</label>
-                                <input type="number" name="id_biodata" id="id_biodata"
-                                    class="form-control @error('id_biodata') is-invalid @enderror"
-                                    value="{{old('id_biodata')}}">
-                                @error('id_biodata')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                @enderror
-                            </div>
-                            <div class="card-footer">
-                                <div class="d-flex justify-content-end">
-                                    <a href="/document" class="btn btn-sm btn-outline-secondary mr-2">Batal</a>
-                                    <button type="submit" class=" btn btn-sm btn-primary">Simpan</button>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="id_biodata" class="form-label">ID Biodata</label>
+                                    <input type="number" name="id_biodata" id="id_biodata"
+                                        class="form-control @error('id_biodata') is-invalid @enderror"
+                                        value="{{old('id_biodata')}}">
+                                    @error('id_biodata')
+                                        <span class="invalid-feedback">{{$message}}</span>
+                                    @enderror
                                 </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-end">
+                                <a href="/document" class="btn btn-sm btn-outline-secondary mr-2">Batal</a>
+                                <button type="submit" class=" btn btn-sm btn-primary">Simpan</button>
                             </div>
                         </div>
             </form>

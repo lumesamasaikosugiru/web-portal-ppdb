@@ -32,15 +32,17 @@
                                 <th>NAMA</th>
                                 <th>URL</th>
                                 <th>ID BIODATA</th>
+                                <th>DIBUAT</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($document as $documents)
                                 <tr>
                                     <td class="text-center">{{$loop->iteration}}</td>
-                                    <td class="text-center">{{$documents->name}}</td>
-                                    <td class="text-center">{{$documents->url_berkas}}</td>
+                                    <td>{{$documents->name}}</td>
+                                    <td>{{$documents->url_berkas}}</td>
                                     <td class="text-center">{{$documents->id_biodata}}</td>
+                                    <td class="text-center">{{$documents->created_at}}</td>
                                     <td>
                                         <div class="d-flex justify-content-center">
                                             <a href="/document/edit/{{$documents->id}}"
