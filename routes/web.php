@@ -1,8 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BiodataController;
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DocumentController;
+
+Route::get('/login', [AuthController::class, 'loginView']);
+Route::get('/', [DashboardController::class, 'index']);
+
 // <>
 Route::get('/biodata', [BiodataController::class, 'index']);
 Route::get('/biodata/create', [BiodataController::class, 'create']);
