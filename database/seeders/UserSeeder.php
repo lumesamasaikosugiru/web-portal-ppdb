@@ -14,16 +14,16 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            "nik_orangtua" => "1234567890123456",
-            "name" => "Bagus Pribadi",
+            "nik_orangtua" => "1234567890122222",
+            "name" => "Bagas",
             "jk" => "L",
             "jalan" => "Pabean",
             "kec" => "Purwakarta",
             "kota_kab" => "Cilegon",
             "pekerjaan" => "Karyawan Swasta",
             "no_hp" => "089525861543",
-            "email" => "bagustampan&berani@gmail.com",
-            "password" => "goodboy"
+            "email" => "testing@gmail.com",
+            "password" => "boying"
         ]);
 
     }
