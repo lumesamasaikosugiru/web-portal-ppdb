@@ -3,17 +3,23 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BiodataController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\RegisterController;
+use App\Http\Controllers\DaftarakunController;
+use App\Http\Controllers\HomeController;
 use App\Http\Middleware\Islogin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DocumentController;
 
+Route::get('/', [HomeController::class, 'home']);
+
 Route::get('/login', [AuthController::class, 'loginView']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
+Route::get('/daftarakun', [DaftarakunController::class, 'daftarakun']);
 
 Route::middleware(Islogin::class)->group(function () {
 
-    Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
     // <>
     Route::get('/biodata', [BiodataController::class, 'index']);
@@ -34,4 +40,4 @@ Route::middleware(Islogin::class)->group(function () {
     // <batas controller document/>
 });
 
-
+Route::get('/registration', [RegisterController::class, 'index']);

@@ -76,10 +76,10 @@
                 <!-- /.social-auth-links -->
 
                 <p class="mb-1">
-                    <a href="forgot-password.html">Saya lupa password</a>
+                    <a href="#">Saya lupa password</a>
                 </p>
                 <p class="mb-0">
-                    <a href="register.html" class="text-center">Daftar terlebih dahulu.</a>
+                    <a href="daftarakun" class="text-center">Daftar terlebih dahulu.</a>
                 </p>
             </div>
             <!-- /.login-card-body -->

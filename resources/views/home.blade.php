@@ -52,7 +52,7 @@
                 <h1 class="fw-bold">Portal Pendaftaran Peserta Didik Baru (PPDB)</h1>
                 <h3 class="text-danger mt-2">WEB APLICATION REGISTRATION</h3>
                 <p class="text-muted mt-3">Menuntun anak anda menuju gerbang pendidikan yang cemerlang!</p>
-                <a href="{{ route('daftar') }}" class="btn btn-primary mt-3">Mulai Mencari Sekolah!</a>
+                <a href="/login" class="btn btn-primary mt-3">Mulai Mencari Sekolah!</a>
             </div>
 
             <!-- Hero Image -->
