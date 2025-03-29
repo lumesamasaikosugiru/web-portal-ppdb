@@ -19,12 +19,11 @@ return new class extends Migration {
             $table->date('tanggal_lahir');
             $table->enum('jk', ['L', 'P']);
             $table->string('sekolah_asal');
-            $table->unsignedBigInteger('id_user');
+            $table->foreignId('id_user')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
             $table->timestamps();
-
-            $table->foreign('id_user')->references('id')->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
         });
     }
 

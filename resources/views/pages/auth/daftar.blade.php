@@ -5,45 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar - PPDB</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 class="text-2xl font-semibold text-center mb-6">Buat Akun Baru</h2>
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+    <div class="card shadow-sm p-4" style="width: 400px;">
+        <h2 class="text-center mb-3">Buat Akun Baru</h2>
 
         @if(session('error'))
-            <div class="bg-red-100 text-red-700 p-2 rounded mb-4">{{ session('error') }}</div>
+            <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form action="#" method="POST" class="space-y-4">
-            {{-- <form action="{{ route('proses_daftar') }}" method="POST" class="space-y-4"> --}}
+        <form action="#" method="POST">
+            {{-- <form action="{{ route('proses_daftar') }}" method="POST"> --}}
                 @csrf
                 @method('POST')
-                <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
-                    <input type="text" id="name" name="name" required
-                        class="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
                 </div>
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" required
-                        class="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300">
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
                 </div>
-                {{-- <div>
-                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                    <input type="password" id="password" name="password" required
-                        class="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300">
+
+                {{-- <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
                 </div> --}}
-                <button type="submit"
-                    class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
-                    Daftar
-                </button>
+
+                <button type="submit" class="btn btn-success w-100">Daftar</button>
             </form>
-            <p class="text-center text-sm mt-4">Sudah punya akun?
-                <a href="login" class="text-blue-500 hover:underline">Login di sini</a>
+
+            <p class="text-center mt-3">Sudah punya akun?
+                <a href="login" class="text-decoration-none">Login di sini</a>
             </p>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

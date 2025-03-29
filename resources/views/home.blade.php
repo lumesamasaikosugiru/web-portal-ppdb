@@ -36,12 +36,20 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-white shadow-sm">
-        <div class="container justify-content-center">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Logo -->
             <a href="#">
                 <img src="{{ asset('imgs/logo.png') }}" alt="SDNPU Schools" class="img-fluid logo">
             </a>
+
+            <!-- Tombol Login & Daftar -->
+            <div>
+                <a href="/login" class="btn btn-outline-primary me-2">Login</a>
+                <a href="/daftarakun" class="btn btn-primary">Daftar</a>
+            </div>
         </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section class="container mt-3 mb-5">
@@ -52,7 +60,7 @@
                 <h1 class="fw-bold">Portal Pendaftaran Peserta Didik Baru (PPDB)</h1>
                 <h3 class="text-danger mt-2">WEB APLICATION REGISTRATION</h3>
                 <p class="text-muted mt-3">Menuntun anak anda menuju gerbang pendidikan yang cemerlang!</p>
-                <a href="/login" class="btn btn-primary mt-3">Mulai Mencari Sekolah!</a>
+                <a href="/daftarakun" class="btn btn-primary mt-3">Mulai Mencari Sekolah!</a>
             </div>
 
             <!-- Hero Image -->
