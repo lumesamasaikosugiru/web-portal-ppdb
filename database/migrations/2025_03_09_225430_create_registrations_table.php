@@ -14,12 +14,11 @@ return new class extends Migration {
             $table->id();
             $table->enum('status', ['Diproses', 'Diterima', 'Ditolak']);
             $table->date('tgl_daftar');
-            $table->unsignedBigInteger('id_biodata');
-            $table->timestamps();
-
-            $table->foreign('id_biodata')->references('id')->on('biodatas')
+            $table->foreignId('id_biodata')
+                ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
