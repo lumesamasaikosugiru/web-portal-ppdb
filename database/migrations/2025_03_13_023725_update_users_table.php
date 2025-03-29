@@ -30,4 +30,6 @@ return new class extends Migration {
             $table->dropColumn(['nik_orantua', 'jk', 'jalan', 'kec', 'kota_kab', 'pekerjaan', 'no_hp']);
         });
     }
+
+
 };

@@ -16,7 +16,7 @@ class RegistrationSeeder extends Seeder
         Registration::create([
             "status" => "Diproses",
             "tgl_daftar" => "2025-01-09",
-            "id_biodata" => "2",
+            "id_biodata" => "3",
         ]);
     }
 }

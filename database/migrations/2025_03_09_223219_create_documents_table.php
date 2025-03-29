@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('name', 100)->unique();
             $table->string('url_berkas');
             $table->foreignId('id_biodata')
-                ->constrained()
+                ->constrained('biodatas')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();

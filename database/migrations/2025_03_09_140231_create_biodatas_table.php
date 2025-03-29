@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->enum('jk', ['L', 'P']);
             $table->string('sekolah_asal');
             $table->foreignId('id_user')
-                ->constrained()
+                ->constrained('users')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
             $table->timestamps();

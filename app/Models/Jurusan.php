@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jurusan extends Model
 {
-    protected $guarded = [];
+    protected $guarded = [];//atribut guarded ini tidak disarankan untuk penggunaan publik (Mass Assignment Vulnerability) untuk UAS mah okelah mwhehe
 }

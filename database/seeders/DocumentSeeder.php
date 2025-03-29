@@ -16,7 +16,7 @@ class DocumentSeeder extends Seeder
         Document::create([
             "name" => "KK Bagus Pribadi33",
             "url_berkas" => "KK Bagus Pribadi",
-            "id_biodata" => "2",
+            "id_biodata" => "3",
         ]);
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->enum('status', ['Diproses', 'Diterima', 'Ditolak']);
             $table->date('tgl_daftar');
             $table->foreignId('id_biodata')
-                ->constrained()
+                ->constrained('biodatas')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();
