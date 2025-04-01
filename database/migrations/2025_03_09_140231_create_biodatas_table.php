@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('nik_siswa');
             $table->string('name', 100);
-            $table->string('nisn', 5);
+            $table->string('nisn', 10);
             $table->string('tempat_lahir', 50);
             $table->date('tanggal_lahir');
             $table->enum('jk', ['L', 'P']);

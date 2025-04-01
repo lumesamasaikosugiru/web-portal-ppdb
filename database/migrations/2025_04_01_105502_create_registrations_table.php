@@ -12,12 +12,16 @@ return new class extends Migration {
     {
         Schema::create('registrations', function (Blueprint $table) {
             $table->id();
-            $table->enum('status', ['Diproses', 'Diterima', 'Ditolak']);
-            $table->date('tgl_daftar');
-            $table->foreignId('id_biodata')
+            $table->foreignId('id_school')
+                ->constrained('schools')
+                ->restrictOnDelete()
+                ->cascadeOnUpdate();
+            $table->enum('gelombang_daftar', ['Afirmasi', 'Prestasi'])->default('Afirmasi');
+            $table->foreignId('id_biodatas')
                 ->constrained('biodatas')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+                ->restrictOnDelete()
+                ->cascadeOnUpdate();
+            $table->string('document_path');
             $table->timestamps();
         });
     }

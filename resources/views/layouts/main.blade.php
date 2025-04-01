@@ -61,7 +61,7 @@
                 <b>Version</b> 1.0.0
             </div>
             <strong>Copyright &copy; {{date('Y')}} <a
-                    href="https://github.com/lumesamasaikosugiru">Mihow-sama</a>.</strong> All rights
+                    href="https://github.com/lumesamasaikosugiru">thegreat-group-2-ppdbwebapp</a>.</strong> All rights
             reserved.
         </footer>
 
