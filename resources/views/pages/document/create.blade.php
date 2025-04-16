@@ -50,13 +50,28 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="id_biodata" class="form-label">ID Biodata</label>
                                     <input type="number" name="id_biodata" id="id_biodata"
                                         class="form-control @error('id_biodata') is-invalid @enderror"
                                         value="{{old('id_biodata')}}">
                                     @error('id_biodata')
-                                        <span class="invalid-feedback">{{$message}}</span>
+                                    <span class="invalid-feedback">{{$message}}</span>
+                                    @enderror
+                                </div> --}}
+                                <div class="form-group">
+                                    <label for="id_biodata" class="form-label">Pilih Biodata</label>
+                                    <select name="id_biodata" id="id_biodata"
+                                        class="form-control @error('id_biodata') is-invalid @enderror">
+                                        <option value="">-- Pilih Biodata --</option>
+                                        @foreach($biodata as $bio)
+                                            <option value="{{ $bio->id }}" {{ old('id_biodata') == $bio->id ? 'selected' : '' }}>
+                                                {{ $bio->id }} - {{ $bio->name ?? 'No Name' }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    @error('id_biodata')
+                                        <span class="invalid-feedback">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Biodata;
 use App\Models\Document;
 use Illuminate\Http\Request;
 
@@ -17,8 +18,8 @@ class DocumentController extends Controller
 
     public function create()
     {
-
-        return view('pages.document.create');
+        $biodata = Biodata::all();
+        return view('pages.document.create', compact('biodata'));
     }
 
     public function store(Request $request)
